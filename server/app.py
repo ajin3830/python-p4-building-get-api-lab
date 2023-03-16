@@ -22,10 +22,11 @@ def index():
 def bakeries():
     bakeries = Bakery.query.all()
     bakeries_serialized = [bakery.to_dict() for bakery in bakeries]
-    # bakeries = [] #WHERE DO I PUT .to_dict() ????
+    # OR
+    # bakeries = []
     # for bakery in Bakery.query.all():
+    #     bakeries_serialized = bakery.to_dict()
     #     bakeries.append(bakery)
-    # bakeries_serialized = bakery.to_dict()
     response = make_response(
         jsonify(bakeries_serialized),
         200
